@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 //import _ from 'lodash';
 import Preloader from './components/Preloader';
 import { loadAllData } from './DataHandling';
+import CountyMap from './components/CountyMap';
 
 class App extends Component {
   state = {
@@ -24,7 +25,12 @@ class App extends Component {
     }
     return (
       <div className="App container">
-          <h1>Loaded {this.state.techSalaries.length} salaries</h1>
+          <svg width="1100" height="500">
+              <CountyMap usTopoJson={this.state.usTopoJson}
+              width={500}
+              height={500}
+              />
+          </svg>
       </div>
     );
   }
